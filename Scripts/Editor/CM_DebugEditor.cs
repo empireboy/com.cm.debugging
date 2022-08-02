@@ -43,10 +43,34 @@ public class CM_DebugEditor : EditorWindow
 
         EditorGUILayout.Space();
 
-        EditorGUILayout.LabelField(debugTitle, _titleStyle, GUILayout.MaxHeight(25));
+        DrawTitle();
 
         EditorGUILayout.Space();
 
+        DrawCategories();
+
+        DrawToggleButtons();
+
+        EditorGUILayout.Space();
+
+        DrawAddCategoryButton();
+
+        EditorGUILayout.Space();
+
+        DrawLogFormat();
+
+        EditorGUILayout.Space();
+
+        EditorUtility.SetDirty(_debugSO);
+    }
+
+    private void DrawTitle()
+    {
+        EditorGUILayout.LabelField(debugTitle, _titleStyle, GUILayout.MaxHeight(25));
+    }
+
+    private void DrawCategories()
+    {
         EditorGUILayout.LabelField("Categories", EditorStyles.boldLabel);
 
         _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
@@ -87,7 +111,10 @@ public class CM_DebugEditor : EditorWindow
         EditorGUILayout.EndVertical();
 
         EditorGUILayout.EndScrollView();
+    }
 
+    private void DrawToggleButtons()
+    {
         EditorGUILayout.BeginHorizontal();
 
         // Enabling and disabling of all categories
@@ -118,9 +145,10 @@ public class CM_DebugEditor : EditorWindow
         }
 
         EditorGUILayout.EndHorizontal();
+    }
 
-        EditorGUILayout.Space();
-
+    private void DrawAddCategoryButton()
+    {
         EditorGUILayout.BeginHorizontal();
 
         // Add new category
@@ -135,9 +163,10 @@ public class CM_DebugEditor : EditorWindow
         }
 
         EditorGUILayout.EndHorizontal();
+    }
 
-        EditorGUILayout.Space();
-
+    private void DrawLogFormat()
+    {
         EditorGUILayout.HelpBox("To format, use {0} for category and {1} for message.", MessageType.Info);
 
         EditorGUILayout.Space();
@@ -146,10 +175,6 @@ public class CM_DebugEditor : EditorWindow
 
         if (!string.Equals(_debugSO.logFormat, CM_Debug.logFormat))
             CM_Debug.logFormat = _debugSO.logFormat;
-
-        EditorGUILayout.Space();
-
-        EditorUtility.SetDirty(_debugSO);
     }
 
     private static void UpdateCategories()
