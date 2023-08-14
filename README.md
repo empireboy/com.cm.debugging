@@ -7,6 +7,8 @@ Categories can be turned on/off, added or removed from the CM Debug window under
 
 Log messages can also be formatted easily.
 
+![CM Debug window](https://github.com/empireboy/com.cm.debugging.unity/blob/main/Documentation/CM%20Debug.png)
+
 ## State
 
 This package is still in development. The current version of this package is not ready for production.
