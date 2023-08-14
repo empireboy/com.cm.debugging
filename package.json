@@ -1,7 +1,7 @@
 {
     "name": "com.cm.debugging.unity",
     "displayName": "CM Debugging Unity",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "unity": "2021.2",
     "author": "Casper Meloen",
     "description": "CM Debugging Unity is a Unity package that makes debugging easier. CM Debugging adds classes like CM_Debug, which can be used instead of the Unity Debug class.",

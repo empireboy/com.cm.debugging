@@ -1,4 +1,4 @@
-# CM Debugging Unity v0.1.0
+# CM Debugging Unity v0.1.1
 
 CM Debugging Unity is a Unity package to make debugging easier.
 
