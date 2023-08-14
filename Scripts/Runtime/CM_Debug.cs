@@ -7,7 +7,12 @@ namespace CM.Debugging
     {
         public static string logFormat = "[{0}] {1}";
 
-        private static Dictionary<string, bool> _categories = new Dictionary<string, bool>();
+        private static Dictionary<string, bool> _categories = new();
+
+        public static void Log(object message)
+        {
+            Debug.Log(message);
+        }
 
         public static void Log(object category, object message)
         {
@@ -17,12 +22,22 @@ namespace CM.Debugging
             Debug.LogFormat(logFormat, category, message);
         }
 
+        public static void LogWarning(object message)
+        {
+            Debug.LogWarning(message);
+        }
+
         public static void LogWarning(object category, object message)
         {
             if (!IsCategoryEnabled(category))
                 return;
 
             Debug.LogWarningFormat(logFormat, category, message);
+        }
+
+        public static void LogError(object message)
+        {
+            Debug.LogError(message);
         }
 
         public static void LogError(object category, object message)
